@@ -15,7 +15,7 @@ function! s:better_operator_message()
 
   " We want to temporarily disable the report message
   let s:old_report = &report
-  set report = 100000000
+  set report=100000000
 
   echom message
 endfunction
