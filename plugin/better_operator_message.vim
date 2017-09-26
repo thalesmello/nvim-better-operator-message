@@ -13,9 +13,14 @@ function! s:better_operator_message()
     let message = message . ' into register ' . v:event['regname']
   endif
 
-  " We want to temporarily disable the report message
+  " We want to temporarily disable the report message so it isn't overridden
+  " by the native operator message
   let s:old_report = &report
   set report=100000000
+
+  " It's necessary to register restore the original value to avoid conflict
+  " with the substitute message
+  call s:register_callback()
 
   echom message
 endfunction
