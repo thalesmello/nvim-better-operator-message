@@ -35,7 +35,6 @@ function! s:callback()
   autocmd! better_operator_message_callback
 endfunction
 
-set report=10000000000
 augroup better_operator_message
   autocmd!
   autocmd TextYankPost * call <sid>better_operator_message()
